@@ -2,3 +2,4 @@ MANIFEST
 lcse.pm
 Makefile.PL
 README
+test.pl

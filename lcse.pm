@@ -2,12 +2,11 @@
 package String::lcse;
 ###################################################################
 #  Chad Granum                                                    #
-#  CIS 222 Perl                                                   #
 #                                                                 #
 #  http://sourceforge.net/users/exodist/                          #
 #                                                                 #
 # Contact Info:                                                   #
-#  granum@sbcglobal.net                                           #
+#  exodist@yifan.net                                              #
 #  (530) 583-2746                                                 #
 #  ICQ: 14536019                                                  #
 #  AIM, MSN, Yahoo: Exodist7                                      #
