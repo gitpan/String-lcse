@@ -1,0 +1,61 @@
+This package contains meathods for finding the largest common string.
+Will ignore ' '(Space) while finding matches (for instance "bye bye" would match "byebye"
+Will return the lognest form of the largest common string (if both "byebye" and "bye bye" are found, "bye bye" will be returned)
+    ^Ammendmant to above: Space between segmants is ignored, for instance of the string was divided into 2 segmants, "Bye Bye" and "Hello There" the space in the midle of the segmant will be counted, only space between segmants is optional.
+Will return Longest string found in the required percentage of strings (if the string "many" is found in twice as many strings as "even more", "even more" will be returned because it is longer)
+If 2 or more common sub-strings are the same length it will return the one found the most (if "ExampleA" is found 5 times, "ExampleB" 2 times, and "ExampleC" 20 times, "ExampleC" will be returned)
+If no sub-strings of the required length are found in the required percentage of strings than 0 will be returned.
+Will only match a sub-string once per string, for instance of a string was "Hello Hello" and the match was "Hello", it would only count 1 match
+-----
+
+Basically the main method (lcs) takes an array of strings, and an array of arrays in which the string has been divided into segmants ahead of time. It then generates a seriese of expressions using these segmants and seaches the original strings for occurances, it registers a max of 1 per line.
+
+#Algorithm pattern will look like this:
+#a b c d e
+#a b c d
+#a b c
+#a b
+#a
+#  b c d e
+#  b c d
+#  b c
+#  b
+#    c d e
+#    c d
+#    c
+#      d e
+#      d
+
+#a,b,c & d represent the divisions of a string.
+
+-----Methods:
+
+Quickly find the largest common string based on words (space seperated segmants of alphanumerics)
+Param 0 reference to an array of strings
+Param 1 Percentage of strings that need to contain the sub-string for it to be considered for return.
+sub lcsQ($$)
+
+
+#Find the largest common string checking every character first running each string through Strip();
+#Param 0 reference to an array of strings
+#Param 1 Percentage of strings that need to contain the sub-string for it to be considered for return.
+sub lcsST($$)
+
+
+#Find the largest common string checking every character.
+#Param 0 reference to an array of strings
+#Param 1 Percentage of strings that need to contain the sub-string for it to be considered for return.
+sub lcsT($$)
+
+
+#Replace underscores and dashes with spaces unless dash acts as a word joining (bye-bye), also removes duplicate spaces
+#Param 0 is a reference to an array of strings.
+sub Strip($)
+
+
+#Find the longest common sub-string (This is where the real work is done ;-))
+#param 0 reference to an array of strings to be matched
+#param 1 reference to an array of arrays in which the strings in param 0 are split into segmants to iterate through
+#param 2 is percentage of strings that need to contain the largest common string, if the number is below that mark 0 will be returned
+#param 3 is minimum segmants for a match
+sub lcs($$$$)
